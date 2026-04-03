@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jing Jiang | Personal Page</title>
+    <meta
+      name="description"
+      content="Jing Jiang 的个人主页，纯静态部署，包含毛玻璃卡片和鼠标跟随动效。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="ambient" aria-hidden="true"></div>
+
+    <header class="hero">
+      <p class="kicker">PERSONAL WEB / STATIC / NO BUILD</p>
+      <h1>Jing Jiang</h1>
+      <p class="subtitle">将希望和真理带到每一个角落</p>
+      <div class="actions">
+        <a class="btn" href="https://github.com/ShepherdLoveYou" target="_blank" rel="noreferrer">GitHub</a>
+        <a class="btn ghost" href="mailto:hello@example.com">Contact</a>
+      </div>
+    </header>
+
+    <main class="card-grid">
+      <article class="glow-card" data-accent="warm">
+        <div class="card-blur">✦</div>
+        <h2>About Me</h2>
+        <p>我是一名基督徒创作者，专注分享圣经学习、节期资源和跨语言内容。</p>
+      </article>
+
+      <article class="glow-card" data-accent="sky">
+        <div class="card-blur">☍</div>
+        <h2>Projects</h2>
+        <p>维护基于 GitHub Pages 的纯静态站点，持续优化阅读体验与视觉设计。</p>
+      </article>
+
+      <article class="glow-card" data-accent="mint">
+        <div class="card-blur">✺</div>
+        <h2>Resources</h2>
+        <p>整理电子书、课程索引、音频与文章，帮助更多人快速找到属灵资源。</p>
+      </article>
+
+      <article class="glow-card" data-accent="rose">
+        <div class="card-blur">✧</div>
+        <h2>Now</h2>
+        <p>当前重点：升级个人站为可持续维护的模板，让新内容自动获得统一视觉风格。</p>
+      </article>
+    </main>
+
+    <section class="publisher" aria-labelledby="publisher-title">
+      <div class="publisher-head">
+        <p class="kicker">POST STUDIO</p>
+        <h2 id="publisher-title">发帖工作台</h2>
+        <p>支持正文、封面图、图片集、视频和音频链接。发布后会创建 GitHub Issue，可触发你的博客自动生成流程。</p>
+      </div>
+
+      <form id="post-form" class="publisher-form">
+        <div class="field two-col">
+          <label for="repo-owner">GitHub Owner</label>
+          <input id="repo-owner" name="repoOwner" value="ShepherdLoveYou" required />
+        </div>
+        <div class="field two-col">
+          <label for="repo-name">Repo Name</label>
+          <input id="repo-name" name="repoName" value="gospel.github.io" required />
+        </div>
+
+        <div class="field">
+          <label for="github-token">GitHub Token（仅浏览器本地使用）</label>
+          <input id="github-token" name="token" type="password" placeholder="ghp_xxx..." />
+          <small>留空则使用“打开草稿页”方式，不会直接调用 API。</small>
+        </div>
+
+        <div class="field">
+          <label for="post-title">标题</label>
+          <input id="post-title" name="title" required />
+        </div>
+
+        <div class="field">
+          <label for="post-labels">标签（逗号分隔）</label>
+          <input id="post-labels" name="labels" value="Goepel" />
+        </div>
+
+        <div class="field">
+          <label for="cover-url">封面图 URL</label>
+          <input id="cover-url" name="coverUrl" placeholder="https://.../cover.jpg" />
+        </div>
+
+        <div class="field">
+          <label for="gallery-urls">图片集 URL（每行一个）</label>
+          <textarea id="gallery-urls" name="galleryUrls" rows="4" placeholder="https://.../img1.jpg&#10;https://.../img2.jpg"></textarea>
+        </div>
+
+        <div class="field two-col">
+          <label for="video-url">视频 URL</label>
+          <input id="video-url" name="videoUrl" placeholder="https://.../video.mp4" />
+        </div>
+
+        <div class="field two-col">
+          <label for="audio-url">音频 URL</label>
+          <input id="audio-url" name="audioUrl" placeholder="https://.../audio.mp3" />
+        </div>
+
+        <div class="field">
+          <label for="post-content">正文（Markdown）</label>
+          <textarea id="post-content" name="content" rows="8" placeholder="在这里写正文..." required></textarea>
+        </div>
+
+        <div class="publisher-actions">
+          <button type="submit" class="btn">直接发布</button>
+          <button type="button" id="open-draft" class="btn ghost">打开 GitHub 草稿页</button>
+        </div>
+
+        <p id="publish-status" class="publish-status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <footer class="footer">© <span id="year"></span> Jing Jiang · Hosted on GitHub Pages</footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
