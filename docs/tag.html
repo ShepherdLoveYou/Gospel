@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="content-type" />
@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
     
-    <link rel="icon" href="https://raw.githubusercontent.com/Jiangjing233/gospel.github.io/79e4924a06b99927e2bb7c1280c09e0ff2a280b7/docs/reshot-icon-church-cross-K28RPN75SX.svg"><script>
+    <link rel="icon" href="https://raw.githubusercontent.com/ShepherdLoveYou/Gospel/main/docs/reshot-icon-church-cross-K28RPN75SX.svg"><script>
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="福音的光 Gospel Light search page">
-<title>福音的光 Gospel Light - Tag</title>
+<meta name="description" content="绂忛煶鐨勫厜 Gospel Light search page">
+<title>绂忛煶鐨勫厜 Gospel Light - Tag</title>
 <link rel='stylesheet' href='./theme-enhanced.css'>
 </head>
 <style>
@@ -54,17 +54,17 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <div class="title-right">
     <div class="subnav-search">
         <input type="search" class="form-control subnav-search-input float-left" aria-label="Search site" value="" style="height:32px;">
-        <button class="btn float-left" type="submit" onclick="javascript:searchShow()">搜索</button>
+        <button class="btn float-left" type="submit" onclick="javascript:searchShow()">鎼滅储</button>
         <svg class="subnav-search-icon octicon octicon-search" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
             <path id="searchSVG" fill-rule="evenodd"></path>
         </svg>
     </div>
-    <a href="https://ShepherdLoveYou.github.io/gospel.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+    <a href="https://ShepherdLoveYou.github.io/Gospel" id="buttonHome" class="btn btn-invisible circle" title="棣栭〉">
         <svg class="octicon" width="16" height="16">
             <path id="pathHome" fill-rule="evenodd"></path>
         </svg>
     </a>
-    <a class="btn btn-invisible circle" onclick="modeSwitch()" title="切换主题">
+    <a class="btn btn-invisible circle" onclick="modeSwitch()" title="鍒囨崲涓婚">
         <svg class="octicon" width="16" height="16" >
             <path id="themeSwitch" fill-rule="evenodd"></path>
         </svg>
@@ -76,7 +76,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <nav class="SideNav"></nav>
 <div class="notFind" style="display:none;font-size:24px;margin:8px;">Not Find</div>
 </div>
-    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://ShepherdLoveYou.github.io/gospel.github.io">福音的光 Gospel Light</a></div>
+    <div id="footer"><div id="footer1">Copyright 漏 <span id="copyrightYear"></span> <a href="https://ShepherdLoveYou.github.io/Gospel">绂忛煶鐨勫厜 Gospel Light</a></div>
 <div id="footer2">
     <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
 </div>
@@ -89,7 +89,7 @@ if(""!=""){
     var startSite=new Date("");
     var diff=now.getTime()-startSite.getTime();
     var diffDay=Math.floor(diff/(1000*60*60*24));
-    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+    document.getElementById("runday").innerHTML="缃戠珯杩愯 "+diffDay+" 澶?+" 鈥?";
 }
 </script></div>
 </body>
@@ -236,7 +236,7 @@ function setClassDisplay(label){
     let lists = document.getElementsByClassName("lists");
     let tagTitle = document.getElementsByClassName("tagTitle")[0];
     tagTitle.innerHTML="Tag #"+label;
-    document.title=label+" - 福音的光 Gospel Light";
+    document.title=label+" - 绂忛煶鐨勫厜 Gospel Light";
     document.getElementsByClassName("subnav-search-input")[0].value='';
     if(label=="All"){
         for(let i = 0; i < lists.length; i++){lists[i].style.display='block';}
@@ -264,8 +264,8 @@ function searchShow(){
     let tagTitle = document.getElementsByClassName("tagTitle")[0];
     let searchInput = document.getElementsByClassName("subnav-search-input")[0].value;
     tagTitle.innerHTML="Search #"+searchInput;
-    if(searchInput==''){document.title="Search - 福音的光 Gospel Light";}
-    else{document.title=searchInput+" - 福音的光 Gospel Light";}
+    if(searchInput==''){document.title="Search - 绂忛煶鐨勫厜 Gospel Light";}
+    else{document.title=searchInput+" - 绂忛煶鐨勫厜 Gospel Light";}
     let a=0;
     window.location.hash="#"+(searchInput);
     for(let i = 0; i < lists.length; i++){
