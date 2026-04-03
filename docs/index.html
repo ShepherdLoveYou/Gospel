@@ -233,8 +233,20 @@ for(var i=0;i<iconPost.length;i++){
     iconPost[i].setAttribute("d",IconList["post"]);
 }
 
-
-
+// Pointer tracking for cards
+(function() {
+    if(!window.matchMedia('(hover: hover)').matches) return;
+    var cards = document.querySelectorAll('.SideNav-item');
+    document.addEventListener('pointermove', function(e) {
+        cards.forEach(function(card) {
+            var rect = card.getBoundingClientRect();
+            var px = ((e.clientX - rect.left) / rect.width) * 100;
+            var py = ((e.clientY - rect.top) / rect.height) * 100;
+            card.style.setProperty('--pointer-x', Math.max(0, Math.min(100, px)) + '%');
+            card.style.setProperty('--pointer-y', Math.max(0, Math.min(100, py)) + '%');
+        });
+    });
+})();
 
 </script>
 
