@@ -1,0 +1,136 @@
+/* Enhanced Theme for Gospel Light Blog */
+/* This CSS is auto-applied to all pages via blogBase.json */
+
+:root {
+    --page-max: 980px;
+    --card-radius: 14px;
+    --card-border: 1px;
+    --surface-bg: rgba(255,255,255,0.72);
+    --surface-border: rgba(255,255,255,0.65);
+    --surface-shadow: 0 14px 42px rgba(15, 28, 64, 0.16);
+    --title-font: "Georgia", "Times New Roman", serif;
+    --body-font: "Segoe UI", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+}
+
+[data-color-mode="dark"] {
+    --surface-bg: rgba(14,18,28,0.72);
+    --surface-border: rgba(255,255,255,0.12);
+    --surface-shadow: 0 14px 42px rgba(0, 0, 0, 0.45);
+}
+
+* { box-sizing: border-box; }
+html, body { min-height: 100%; }
+
+body {
+    position: relative;
+    background:
+      radial-gradient(1200px 680px at -10% -20%, rgba(255, 165, 120, 0.17), transparent 58%),
+      radial-gradient(900px 600px at 110% -10%, rgba(69, 153, 255, 0.18), transparent 56%),
+      linear-gradient(170deg, rgba(239, 244, 255, 0.95), rgba(248, 250, 255, 0.98)) !important;
+}
+
+[data-color-mode="dark"] body {
+    background:
+      radial-gradient(1200px 680px at -10% -20%, rgba(255, 140, 87, 0.12), transparent 58%),
+      radial-gradient(900px 600px at 110% -10%, rgba(51, 120, 210, 0.18), transparent 56%),
+      linear-gradient(165deg, rgba(14, 20, 34, 0.97), rgba(11, 15, 24, 0.98)) !important;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image: linear-gradient(to right, rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.08) 1px, transparent 1px);
+    background-size: 34px 34px;
+    opacity: 0.32;
+    -webkit-mask-image: radial-gradient(circle at 50% 35%, #000 40%, transparent 90%);
+    mask-image: radial-gradient(circle at 50% 35%, #000 40%, transparent 90%);
+    z-index: -1;
+}
+
+#header {
+    border: var(--card-border) solid var(--surface-border) !important;
+    border-radius: var(--card-radius);
+    background: var(--surface-bg) !important;
+    -webkit-backdrop-filter: blur(14px) saturate(1.2) !important;
+    backdrop-filter: blur(14px) saturate(1.2) !important;
+    box-shadow: var(--surface-shadow) !important;
+}
+
+#footer {
+    border: var(--card-border) solid var(--surface-border) !important;
+    border-radius: 12px;
+    background: var(--surface-bg) !important;
+}
+
+.postTitle {
+    font-family: var(--title-font) !important;
+    font-weight: 700 !important;
+}
+
+.SideNav-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--card-radius);
+    border: var(--card-border) solid var(--surface-border) !important;
+    background: var(--surface-bg) !important;
+    -webkit-backdrop-filter: blur(13px) saturate(1.18) !important;
+    backdrop-filter: blur(13px) saturate(1.18) !important;
+    box-shadow: var(--surface-shadow) !important;
+    transition: transform 0.2s ease, box-shadow 0.24s ease, border-color 0.2s ease;
+}
+
+.SideNav {
+    border: 0 !important;
+}
+
+.SideNav-item::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    pointer-events: none;
+    background: radial-gradient(240px circle at var(--pointer-x, 50%) var(--pointer-y, 50%), var(--card-accent, rgba(255, 120, 60, 0.28)), transparent 54%);
+    opacity: 0.82;
+    z-index: 0;
+}
+
+.SideNav-item:hover,
+.SideNav-item:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 46px rgba(6, 18, 45, 0.2) !important;
+    border-color: rgba(255,255,255,0.9) !important;
+}
+
+.SideNav-item .Label,
+.SideNav-item .listTitle,
+.SideNav-item .SideNav-icon {
+    position: relative;
+    z-index: 1;
+}
+
+#postBody {
+    border-radius: var(--card-radius);
+    border: var(--card-border) solid var(--surface-border) !important;
+    background: var(--surface-bg) !important;
+    -webkit-backdrop-filter: blur(13px) saturate(1.18) !important;
+    backdrop-filter: blur(13px) saturate(1.18) !important;
+    box-shadow: var(--surface-shadow) !important;
+    padding: 20px !important;
+}
+
+.markdown-body {
+    font-family: var(--body-font) !important;
+    line-height: 1.45 !important;
+}
+
+/* Mobile optimization */
+@media (max-width: 600px) {
+    #postBody {
+        padding: 14px !important;
+    }
+    
+    .SideNav-item {
+        padding: 12px !important;
+    }
+}
