@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
 <head>
-    <meta charset="utf-8" />
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
@@ -15,179 +15,35 @@
 
 </head>
 <style>
-:root {
-    --page-max: 980px;
-    --card-radius: 14px;
-    --card-border: 1px;
-    --surface-bg: rgba(255,255,255,0.72);
-    --surface-border: rgba(255,255,255,0.65);
-    --surface-shadow: 0 14px 42px rgba(15, 28, 64, 0.16);
-    --title-font: "Georgia", "Times New Roman", serif;
-    --body-font: "Segoe UI", "Noto Sans SC", "Microsoft YaHei", sans-serif;
-}
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
 
-[data-color-mode="dark"] {
-    --surface-bg: rgba(14,18,28,0.72);
-    --surface-border: rgba(255,255,255,0.12);
-    --surface-shadow: 0 14px 42px rgba(0, 0, 0, 0.45);
-}
+</style>
 
-* { box-sizing: border-box; }
-html, body { min-height: 100%; }
+<style>
+.tagTitle{margin:auto 0;font-size:40px;font-weight:bold;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
 
-body {
-    min-width: 200px;
-    max-width: var(--page-max);
-    margin: 20px auto;
-    padding: 42px;
-    font-size: 16px;
-    font-family: var(--body-font);
-    line-height: 1.35;
-    position: relative;
-    background:
-      radial-gradient(1200px 680px at -10% -20%, rgba(255, 165, 120, 0.17), transparent 58%),
-      radial-gradient(900px 600px at 110% -10%, rgba(69, 153, 255, 0.18), transparent 56%),
-      linear-gradient(170deg, rgba(239, 244, 255, 0.95), rgba(248, 250, 255, 0.98));
-}
+.subnav-search{width:222px;margin-top:8px;margin-right:8px;}
+.subnav-search-input{width:160px;border-top-right-radius:0px;border-bottom-right-radius:0px;}
+.subnav-search button{padding:5px 8px;border-top-left-radius:0px;border-bottom-left-radius:0px;}
 
-[data-color-mode="dark"] body {
-    background:
-      radial-gradient(1200px 680px at -10% -20%, rgba(255, 140, 87, 0.12), transparent 58%),
-      radial-gradient(900px 600px at 110% -10%, rgba(51, 120, 210, 0.18), transparent 56%),
-      linear-gradient(165deg, rgba(14, 20, 34, 0.97), rgba(11, 15, 24, 0.98));
-}
+.SideNav-icon{margin-right:16px}
+.Label{color: #fff;margin-left:4px;}
+#taglabel .Label {margin-bottom:8px;}
+.Counter{color:#fff;background-color:rgba(234, 238, 242, 0.5)}
 
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    background-image: linear-gradient(to right, rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.08) 1px, transparent 1px);
-    background-size: 34px 34px;
-    opacity: 0.32;
-    -webkit-mask-image: radial-gradient(circle at 50% 35%, #000 40%, transparent 90%);
-    mask-image: radial-gradient(circle at 50% 35%, #000 40%, transparent 90%);
-    z-index: -1;
-}
-
-#header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 14px 16px;
-    margin-bottom: 16px;
-    border: var(--card-border) solid var(--surface-border);
-    border-radius: var(--card-radius);
-    background: var(--surface-bg);
-    -webkit-backdrop-filter: blur(14px) saturate(1.2);
-    backdrop-filter: blur(14px) saturate(1.2);
-    box-shadow: var(--surface-shadow);
-}
-
-#footer {
-    margin-top: 64px;
-    text-align: center;
-    font-size: small;
-    padding: 14px;
-    border-radius: 12px;
-    border: var(--card-border) solid var(--surface-border);
-    background: var(--surface-bg);
-}
-
-.tagTitle {
-    margin: auto 0;
-    font-size: 34px;
-    font-weight: 700;
-    font-family: var(--title-font);
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
-
-.title-right { display: flex; margin: auto 0 0 auto; }
-.title-right .circle { padding: 14px 16px; margin-right: 8px; }
-
-.subnav-search { width: 222px; margin-top: 8px; margin-right: 8px; }
-.subnav-search-input {
-    width: 160px;
-    height: 32px;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-}
-.subnav-search button {
-    padding: 5px 8px;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-}
-
-.SideNav {
-    display: grid;
-    gap: 14px;
-    border: 0 !important;
-    background: transparent;
-}
-
-.lists {
-    border-radius: var(--card-radius);
-}
-
-.SideNav-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: var(--card-radius);
-    border: var(--card-border) solid var(--surface-border);
-    background: var(--surface-bg);
-    -webkit-backdrop-filter: blur(13px) saturate(1.18);
-    backdrop-filter: blur(13px) saturate(1.18);
-    box-shadow: var(--surface-shadow);
-    padding: 14px 16px;
-    text-decoration: none;
-    transition: transform .2s ease, box-shadow .24s ease, border-color .2s ease;
-}
-
-.SideNav-item::before {
-    content: "";
-    position: absolute;
-    inset: -1px;
-    pointer-events: none;
-    background: radial-gradient(240px circle at var(--pointer-x, 50%) var(--pointer-y, 50%), var(--card-accent, rgba(255, 120, 60, 0.28)), transparent 54%);
-    opacity: 0.82;
-}
-
-.SideNav-item:hover,
-.SideNav-item:focus-visible {
-    transform: translateY(-2px);
-    box-shadow: 0 18px 46px rgba(6, 18, 45, 0.2);
-    border-color: rgba(255,255,255,0.9);
-}
-
-.SideNav-icon { margin-right: 16px; z-index: 1; }
-.Label { color: #fff; margin-left: 4px; position: relative; z-index: 1; }
-#taglabel .Label { margin-bottom: 8px; }
-.Counter { color: #fff; background-color: rgba(234, 238, 242, 0.5); }
-
-.genTime { float: right; }
-.d-flex { min-width: 0; }
-.tag-label-wrap { margin-bottom: 8px; }
-.notFind { display: none; font-size: 24px; margin: 8px; }
-.listTitle {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    max-width: 100%;
-    font-weight: 600;
-    position: relative;
-    z-index: 1;
-}
-.listLabels { white-space: nowrap; }
+.genTime{float: right;}
+.d-flex{min-width:0;}
+.listTitle{overflow:hidden;white-space:nowrap;text-overflow: ellipsis;max-width: 100%;}
+.listLabels{white-space:nowrap;}
 
 @media (max-width: 600px) {
-    body { padding: 10px; margin: 10px auto; }
-    #header { padding: 10px 12px; }
-    .tagTitle { display: none; }
-    .LabelTime { display: none; }
-    .subnav-search { width: 178px; }
-    .subnav-search-input { width: 124px; }
+    body { padding: 8px;}
+    .tagTitle{display:none;}
+    .LabelTime{display:none;}
 }
 </style>
 
@@ -197,7 +53,7 @@ body::before {
 <span class="tagTitle"><span>Loading</span><span class="AnimatedEllipsis"></span></span>
 <div class="title-right">
     <div class="subnav-search">
-        <input type="search" class="form-control subnav-search-input float-left" aria-label="Search site" value="">
+        <input type="search" class="form-control subnav-search-input float-left" aria-label="Search site" value="" style="height:32px;">
         <button class="btn float-left" type="submit" onclick="javascript:searchShow()">搜索</button>
         <svg class="subnav-search-icon octicon octicon-search" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
             <path id="searchSVG" fill-rule="evenodd"></path>
@@ -216,13 +72,13 @@ body::before {
 </div>
 </div>
     <div id="content">
-<div id="taglabel" class="tag-label-wrap"></div>
+<div id="taglabel" style="margin-bottom:8px;"></div>
 <nav class="SideNav"></nav>
-<div class="notFind">Not Find</div>
+<div class="notFind" style="display:none;font-size:24px;margin:8px;">Not Find</div>
 </div>
     <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://ShepherdLoveYou.github.io/gospel.github.io">福音的光 Gospel Light</a></div>
 <div id="footer2">
-    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank" rel="noopener noreferrer">Gmeek</a></span>
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
 </div>
 
 <script>
@@ -286,7 +142,6 @@ request.onload=function(){
     console.log(jsonData);
     showList(labelsCount);
     setClassDisplay(decodeURI(window.location.hash.slice(1)));
-    enhanceTagCards();
 }
 
 function showList(labelsCount){
@@ -423,32 +278,6 @@ function searchShow(){
         notFind.innerHTML='Not Find "'+searchInput+'"';
     }
     else{document.getElementsByClassName("notFind")[0].style.display='none';}
-}
-
-function enhanceTagCards(){
-    var cards=document.querySelectorAll('.SideNav-item');
-    for(var i=0;i<cards.length;i++){
-        var firstLabel=cards[i].querySelector('.LabelName');
-        if(firstLabel&&firstLabel.style.backgroundColor){
-            cards[i].style.setProperty('--card-accent', firstLabel.style.backgroundColor.replace(')', ',0.26)').replace('rgb', 'rgba'));
-        }
-    }
-    if(window.matchMedia('(hover: hover)').matches){
-        document.addEventListener('pointermove', function(event){
-            for(var j=0;j<cards.length;j++){
-                var rect=cards[j].getBoundingClientRect();
-                var px=((event.clientX-rect.left)/rect.width)*100;
-                var py=((event.clientY-rect.top)/rect.height)*100;
-                cards[j].style.setProperty('--pointer-x', Math.max(0, Math.min(100, px))+'%');
-                cards[j].style.setProperty('--pointer-y', Math.max(0, Math.min(100, py))+'%');
-            }
-        });
-    }else{
-        for(var k=0;k<cards.length;k++){
-            cards[k].style.setProperty('--pointer-x', '50%');
-            cards[k].style.setProperty('--pointer-y', '50%');
-        }
-    }
 }
 
 </script>
